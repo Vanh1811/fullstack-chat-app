@@ -3,7 +3,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import AuthImagePattern from "../components/authImagePattern";
+import AIP from "../components/AIP";
 import toast from "react-hot-toast";
 
 const SignUpPage = () => {
@@ -144,7 +144,7 @@ const SignUpPage = () => {
 
       {/* right side */}
 
-      <AuthImagePattern
+      <AIP
         title="Join our community"
         subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
       />

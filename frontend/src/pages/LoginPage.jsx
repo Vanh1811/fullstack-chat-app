@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import AuthImagePattern from "../components/authImagePattern";
+import AuthImagePattern from "../components/AIP";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
-import AuthImagePattern from "../components/authImagePattern";
+import AIP from "../components/AIP";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -110,7 +110,7 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side - Image/Pattern */}
-      <AuthImagePattern
+      <AIP
         title={"Welcome back!"}
         subtitle={"Sign in to continue your conversations and catch up with your messages."}
       />
