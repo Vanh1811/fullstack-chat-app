@@ -48,7 +48,7 @@ const MessageInput = () => {
   };
 
   return (
-    <div className="p-4 w-full">
+    <div className="p-4 w-full border-t border-base-300 bg-base-100/80 backdrop-blur">
       {imagePreview && (
         <div className="mb-3 flex items-center gap-2">
           <div className="relative">
@@ -62,6 +62,7 @@ const MessageInput = () => {
               className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-base-300
               flex items-center justify-center"
               type="button"
+              aria-label="Remove image"
             >
               <X className="size-3" />
             </button>
@@ -88,9 +89,10 @@ const MessageInput = () => {
 
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
+            className={`btn btn-ghost btn-circle
                      ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
             onClick={() => fileInputRef.current?.click()}
+            aria-label="Attach image"
           >
             <Image size={20} />
           </button>
@@ -99,6 +101,7 @@ const MessageInput = () => {
           type="submit"
           className="btn btn-sm btn-circle"
           disabled={!text.trim() && !imagePreview}
+          aria-label="Send message"
         >
           <Send size={22} />
         </button>

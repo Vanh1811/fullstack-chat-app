@@ -44,10 +44,15 @@ const ChatContainer = () => {
   }
 
   return (
-    <div className="flex-1 flex flex-col overflow-auto">
+    <div className="flex-1 flex flex-col overflow-auto bg-base-200/30">
       <ChatHeader />
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+        {messages.length === 0 && (
+          <div className="text-center text-sm text-base-content/60 pt-10">
+            No messages yet. Say hello to start the conversation.
+          </div>
+        )}
         {messages.map((message) => (
           <div
             key={message._id}
@@ -71,7 +76,7 @@ const ChatContainer = () => {
                 {formatMessageTime(message.createdAt)}
               </time>
             </div>
-            <div className="chat-bubble flex flex-col">
+            <div className="chat-bubble flex flex-col max-w-[70%] shadow-sm">
               {message.image && (
                 <img
                   src={message.image}

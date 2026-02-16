@@ -2,3 +2,38 @@
 @plugin "daisyui" {
     themes: all;
   }
+
+@layer base {
+  html {
+    font-family: "Sora", "DM Sans", "Noto Sans", "Segoe UI", sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: oklch(var(--b2));
+  }
+}
+
+@layer components {
+  .app-shell {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(70% 60% at 10% 0%, oklch(var(--p) / 0.18), transparent 70%),
+      radial-gradient(60% 50% at 90% 10%, oklch(var(--a) / 0.16), transparent 65%),
+      linear-gradient(180deg, oklch(var(--b2)), oklch(var(--b3)));
+  }
+
+  .card-surface {
+    background-color: color-mix(in oklab, oklch(var(--b1)) 88%, transparent);
+    border: 1px solid color-mix(in oklab, oklch(var(--b3)) 70%, transparent);
+    box-shadow:
+      0 24px 60px -30px oklch(var(--n) / 0.45),
+      0 4px 16px -8px oklch(var(--n) / 0.3);
+    backdrop-filter: blur(20px);
+  }
+
+  .section-title {
+    letter-spacing: -0.02em;
+  }
+}
